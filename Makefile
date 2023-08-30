@@ -1,40 +1,39 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: anguinau <anguinau@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/12/18 18:15:19 by anguinau          #+#    #+#              #
-#    Updated: 2021/02/13 09:29:30 by anguinau         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+NAME		= libftprintf.a
 
-NAME	= libftprintf.a
+CC		= gcc
+CFLAGS		= -Wall -Wextra -Werror
+RM		= rm -rf
 
-SRCS	= src/ft_printf.c src/utils.c src/utils_bis.c src/utils_bis_bis.c src/last_utils.c
+SRC_DIR		= src
+OBJ_DIR		= obj
+SRC_EXT		= c
+SRC_COUNT	= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)" | wc -l)
+SRC		= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)")
+OBJ		= $(subst $(SRC_DIR),$(OBJ_DIR),$(SRC:.c=.o))
 
-OBJS	= $(SRCS:.c=.o)
+all		: ${NAME}
 
-CC	= gcc
-CFLAGS	= -Wall -Wextra -Werror
+ifeq ($(SRC_COUNT), 5)
+${NAME}		: $(OBJ_DIR) ${OBJ}
+		ar rcs ${NAME} ${OBJ}
+else
+$(NAME)		:
+		@echo "Srcs corrupted, aborting"
+endif
 
-RM	= rm -f
+$(OBJ_DIR)	:
+		@mkdir $(OBJ_DIR)
 
-.c.o		:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-
-all		:	${NAME}
-
-${NAME}		:	${OBJS}
-			ar rcs ${NAME} ${OBJS}
+$(OBJ_DIR)/%.o	: $(SRC_DIR)/%.$(SRC_EXT)
+		$(CC) $(CFLAGS) -c $< -o $(<:.$(SRC_EXT)=.o)
+		@mv $(SRC_DIR)/*.o $@
 
 clean		:
-			${RM} ${OBJS}
+		${RM} ${OBJ_DIR}
 
-fclean		:	clean
-			${RM} ${NAME}
+fclean		: clean
+		${RM} ${NAME}
 
-re		:	fclean all
+re		: fclean all
 
-.PHONY		:	all clean fclean re
+.PHONY		: all bonus clean fclean re

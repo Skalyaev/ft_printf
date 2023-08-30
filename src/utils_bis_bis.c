@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../include/header.h"
 
 ssize_t	clean_up(t_tab *molp, t_type_list *value)
 {

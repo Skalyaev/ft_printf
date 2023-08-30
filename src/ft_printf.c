@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../include/header.h"
 
 void	avoid_convert(const char *str, int *i, ssize_t *ret, t_tab *molp)
 {

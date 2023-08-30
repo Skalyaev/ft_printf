@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../include/header.h"
 
 void	fill_duxxp(t_type_list *value, const char *str, int *i, va_list ap)
 {

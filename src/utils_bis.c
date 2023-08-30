@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../include/header.h"
 
 void	ft_putstr_fd(const char *s, ssize_t fd, ssize_t *ret, t_tab *molp)
 {
