@@ -1,12 +1,54 @@
 # ft_printf
-> *Because ft_putnbr() and ft_putstr() aren’t enough*
+> *Le but de ce projet est assez simple. Vous allez recoder printf().*
 
-*You will discover a popular and versatile C function: printf().*
-*This exercise is a great opportunity to improve your programming skills. It is of moderate difficulty.*
-*You will discover variadic functions in C.*
-*The key to a successful ft_printf is a well-structured and extensible code.*
+## Checklist
+- [x] `%c` Imprime un seul caractère.
+- [x] `%s` Imprime une chaîne de caractères (selon la convention C courante).
+- [x] `%p` L'argument du pointeur void * doit être imprimé en format hexadécimal.
+- [x] `%d` Imprime un nombre décimal (base 10).
+- [x] `%i` Imprime un entier en base 10.
+- [x] `%u` Imprime un nombre décimal non signé (base 10).
+- [x] `%x` Imprime un nombre en format hexadécimal (base 16) en minuscules.
+- [x] `%X` Imprime un nombre en format hexadécimal (base 16) en majuscules.
+- [x] `%%` Imprime un signe de pourcentage.
 
-## Objectives
-The goal of this project is pretty straightforward. You will recode printf().
-You will mainly learn about using a variable number of arguments. How cool is that??
-It is actually pretty cool :)
+## Install
+```bash
+sudo apt update -y
+sudo apt install -y ar
+sudo apt install -y make
+sudo apt install -y git
+```
+```bash
+mkdir -p $HOME/.local/lib
+mkdir -p $HOME/.local/src
+mkdir -p $HOME/.local/include
+```
+```bash
+link=Skalyaeve/ft_printf
+name=libftprintf
+
+git clone https://github.com/$link.git $name
+cd $name && make && make clean
+
+ln -s $PWD/$name.a $HOME/.local/lib/$name.a
+ln -s $PWD/src $HOME/.local/src/$name
+ln -s $PWD/include $HOME/.local/include/$name
+```
+
+## Usage
+- `gcc` flags:
+```bash
+-L$HOME/.local/lib -lftprintf
+```
+
+## Uninstall
+```bash
+name=libftprintf
+
+rm -r $name
+rm $HOME/.local/lib/$name.a
+rm $HOME/.local/src/$name
+rm $HOME/.local/include/$name
+```
+

@@ -1,39 +1,35 @@
-NAME		= libftprintf.a
+NAME=libftprintf.a
 
-CC		= gcc
-CFLAGS		= -Wall -Wextra -Werror
-RM		= rm -rf
+CC=gcc
+CFLAGS=-Wall -Wextra -Werror
 
-SRC_DIR		= src
-OBJ_DIR		= obj
-SRC_EXT		= c
-SRC_COUNT	= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)" | wc -l)
-SRC		= $(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)")
-OBJ		= $(subst $(SRC_DIR),$(OBJ_DIR),$(SRC:.c=.o))
+SRC_EXT=c
+SRC_DIR=src
+SRC=$(shell find $(SRC_DIR) -type f -name "*.$(SRC_EXT)")
 
-all		: ${NAME}
+OBJ=$(subst $(SRC_DIR),$(OBJ_DIR),$(SRC:.c=.o))
+OBJ_DIR=obj
 
-ifeq ($(SRC_COUNT), 5)
-${NAME}		: $(OBJ_DIR) ${OBJ}
-		ar rcs ${NAME} ${OBJ}
-else
-$(NAME)		:
-		@echo "Srcs corrupted, aborting"
-endif
+RM=rm -rf
 
-$(OBJ_DIR)	:
-		@mkdir $(OBJ_DIR)
+all: ${NAME}
 
-$(OBJ_DIR)/%.o	: $(SRC_DIR)/%.$(SRC_EXT)
-		$(CC) $(CFLAGS) -c $< -o $(<:.$(SRC_EXT)=.o)
-		@mv $(SRC_DIR)/*.o $@
+${NAME}: $(OBJ_DIR) ${OBJ}
+	ar rcs ${NAME} ${OBJ}
 
-clean		:
-		${RM} ${OBJ_DIR}
+$(OBJ_DIR):
+	@mkdir $(OBJ_DIR)
 
-fclean		: clean
-		${RM} ${NAME}
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.$(SRC_EXT) ${HEADER}
+	$(CC) $(CFLAGS) -c $< -o $(<:.$(SRC_EXT)=.o)
+	@mv $(SRC_DIR)/*.o $@
 
-re		: fclean all
+clean:
+	${RM} ${OBJ_DIR}
 
-.PHONY		: all clean fclean re
+fclean: clean
+	${RM} ${NAME}
+
+re: fclean all
+
+.PHONY: all clean fclean re
