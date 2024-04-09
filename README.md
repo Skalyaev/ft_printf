@@ -1,5 +1,5 @@
 # ft_printf
-> *Le but de ce projet est assez simple. Vous allez recoder printf().*
+> *Le but de ce projet est assez simple. Vous allez recoder une partie de printf().*
 
 ## Checklist
 - [x] `%c` Imprime un seul caractère.
