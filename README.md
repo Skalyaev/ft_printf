@@ -17,7 +17,6 @@
 sudo apt update -y
 sudo apt install -y ar
 sudo apt install -y make
-sudo apt install -y git
 ```
 ```bash
 mkdir -p $HOME/.local/lib
@@ -39,7 +38,7 @@ ln -s $PWD/include $HOME/.local/include/$name
 ## Usage
 - `gcc` flags:
 ```bash
--L$HOME/.local/lib -lftprintf
+-L $HOME/.local/lib -lftprintf
 ```
 
 ## Uninstall
