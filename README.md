@@ -1,18 +1,20 @@
-# ft_printf
-> *Le but de ce projet est assez simple. Vous allez recoder une partie de printf().*
+# <p align="center">ft_printf</p>
+> *Ce projet est clair et efficace. Vous devez recoder **`printf()`**. Vous aurez dès lors la possibilité de le réutiliser dans vos futurs projets.*
+> 
+> *Ce projet porte principalement sur les arguments à taille variable.*
 
 ## Checklist
-- [x] `%c` Imprime un seul caractère.
-- [x] `%s` Imprime une chaîne de caractères (selon la convention C courante).
-- [x] `%p` L'argument du pointeur void * doit être imprimé en format hexadécimal.
-- [x] `%d` Imprime un nombre décimal (base 10).
-- [x] `%i` Imprime un entier en base 10.
-- [x] `%u` Imprime un nombre décimal non signé (base 10).
-- [x] `%x` Imprime un nombre en format hexadécimal (base 16) en minuscules.
-- [x] `%X` Imprime un nombre en format hexadécimal (base 16) en majuscules.
-- [x] `%%` Imprime un signe de pourcentage.
+- [x] **`%c`** Imprime un seul caractère
+- [x] **`%s`** Imprime une chaîne de caractères (selon la convention C courante)
+- [x] **`%p`** L'argument du pointeur void * doit être imprimé en format hexadécimal
+- [x] **`%d`** Imprime un nombre décimal (base 10)
+- [x] **`%i`** Imprime un entier en base 10
+- [x] **`%u`** Imprime un nombre décimal non signé (base 10)
+- [x] **`%x`** Imprime un nombre en format hexadécimal (base 16) en minuscules
+- [x] **`%X`** Imprime un nombre en format hexadécimal (base 16) en majuscules
+- [x] **`%%`** Imprime un signe de pourcentage
 
-## Install
+## Installer
 ```bash
 sudo apt update -y
 sudo apt install -y ar
@@ -35,13 +37,13 @@ ln -s $PWD/src $HOME/.local/src/$name
 ln -s $PWD/include $HOME/.local/include/$name
 ```
 
-## Usage
+## Utiliser
 - `gcc` flags:
 ```bash
 -L $HOME/.local/lib -lftprintf
 ```
 
-## Uninstall
+## Désinstaller
 ```bash
 name=libftprintf
 
