@@ -14,7 +14,7 @@
 - [x] **`%X`** Imprime un nombre en format hexadécimal (base 16) en majuscules
 - [x] **`%%`** Imprime un signe de pourcentage
 
-## Installer
+## Install
 ```bash
 sudo apt update -y
 sudo apt install -y ar
@@ -37,17 +37,17 @@ ln -s $PWD/src $HOME/.local/src/$name
 ln -s $PWD/include $HOME/.local/include/$name
 ```
 
-## Utiliser
+## Usage
 - `gcc` flags:
 ```bash
 -L $HOME/.local/lib -lftprintf
 ```
 
-## Désinstaller
+## Uninstall
 ```bash
 name=libftprintf
 
-rm -r $name
+rm -rf $name
 rm $HOME/.local/lib/$name.a
 rm $HOME/.local/src/$name
 rm $HOME/.local/include/$name
