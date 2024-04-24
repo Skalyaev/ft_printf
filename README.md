@@ -26,10 +26,9 @@ mkdir -p $HOME/.local/src
 mkdir -p $HOME/.local/include
 ```
 ```bash
-link=Skalyaeve/ft_printf
 name=libftprintf
 
-git clone https://github.com/$link.git $name
+git clone https://github.com/Skalyaeve/ft_printf.git $name
 cd $name && make && make clean
 
 ln -s $PWD/$name.a $HOME/.local/lib/$name.a
