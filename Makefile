@@ -1,7 +1,7 @@
 NAME=libftprintf.a
 
 CC=gcc
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS=-Wall -Wextra -Werror -O3
 
 SRC_EXT=c
 SRC_DIR=src
