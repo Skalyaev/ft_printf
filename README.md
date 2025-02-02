@@ -1,12 +1,14 @@
 # <p align="center">ft_printf</p>
-> *Ce projet est clair et efficace. Vous devez recoder **`printf()`**. Vous aurez dès lors la possibilité de le réutiliser dans vos futurs projets.*
+
+> _Ce projet est clair et efficace. Vous devez recoder **`printf()`**. Vous aurez dès lors la possibilité de le réutiliser dans vos futurs projets._
 >
-> *Ce projet porte principalement sur les arguments à taille variable.*
+> _Ce projet porte principalement sur les arguments à taille variable._
 
 ## Checklist
+
 - [x] **`%c`** Imprime un seul caractère
 - [x] **`%s`** Imprime une chaîne de caractères (selon la convention C courante)
-- [x] **`%p`** L'argument du pointeur void * doit être imprimé en format hexadécimal
+- [x] **`%p`** L'argument du pointeur void \* doit être imprimé en format hexadécimal
 - [x] **`%d`** Imprime un nombre décimal (base 10)
 - [x] **`%i`** Imprime un entier en base 10
 - [x] **`%u`** Imprime un nombre décimal non signé (base 10)
@@ -15,16 +17,19 @@
 - [x] **`%%`** Imprime un signe de pourcentage
 
 ## Install
+
 ```bash
 sudo apt update -y
 sudo apt install -y ar
 sudo apt install -y make
 ```
+
 ```bash
 mkdir -p $HOME/.local/lib
 mkdir -p $HOME/.local/src
 mkdir -p $HOME/.local/include
 ```
+
 ```bash
 name=libftprintf
 
@@ -37,12 +42,15 @@ ln -s $PWD/include $HOME/.local/include/$name
 ```
 
 ## Usage
+
 - `gcc` flags:
+
 ```bash
 -L $HOME/.local/lib -lftprintf
 ```
 
 ## Uninstall
+
 ```bash
 name=libftprintf
 
@@ -51,4 +59,3 @@ rm $HOME/.local/lib/$name.a
 rm $HOME/.local/src/$name
 rm $HOME/.local/include/$name
 ```
-
